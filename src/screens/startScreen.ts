@@ -10,6 +10,22 @@ export function renderStartScreen() {
   app.innerHTML =`
   <div class="w-screen h-screen bg-black/80 backdrop-blur-md flex items-center justify-center flex-col text-white gap-8">
     
+    <div class="absolute top-4 right-4 flex gap-4">
+       <button class="flex items-center gap-2 px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition group" >
+            <img 
+                src="/src/assets/icons/settings.svg" 
+                alt="Configurações" 
+                class="w-6 h-6 transition group-hover:rotate-90"
+            >
+            <span class="text-md">Configurações</span>
+        </button>
+        
+        <Button>
+         
+              Dúvidas
+            </Button>
+    </div>
+
     <h1 class="text-5xl font-bold tracking-wide">
       Bots In Action
     </h1>
