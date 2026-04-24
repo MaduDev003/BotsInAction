@@ -10,7 +10,7 @@ export function renderStartScreen() {
   setBackground('/src/assets/images/background.png')
 
   app.innerHTML = `
-  <div class="w-screen h-screen bg-black/80 backdrop-blur-md flex items-center justify-center flex-col text-white gap-8">
+  <div class="w-screen h-screen bg-black/80 backdrop-blur-sm flex items-center justify-center flex-col text-white gap-8">
     
     ${renderTopMenu()}
 
@@ -36,7 +36,7 @@ export function renderStartScreen() {
   </div>
 `
 
-  // 🎮 eventos
+
   document
     .querySelector('#startBtn')
     ?.addEventListener('click', renderSelectCharacterScreen)

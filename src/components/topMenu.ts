@@ -1,3 +1,5 @@
+import type { ModalType } from '../types/modalTypes';
+
 export function renderTopMenu() {
   return `
     <div class="absolute top-4 right-6 flex gap-4">
@@ -28,16 +30,20 @@ export function renderTopMenu() {
   `
 }
 
+function openModal(modalType: ModalType) {
+  console.log(`Abrir modal de ${modalType === 'settings' ? 'Configurações' : 'Dúvidas'}`)
+}
+
 export function setupTopMenuEvents() {
   document
     .querySelector('#settingsBtn')
     ?.addEventListener('click', () => {
-      console.log('Abrir configurações ⚙️')
+      openModal('settings')
     })
 
   document
     .querySelector('#helpBtn')
     ?.addEventListener('click', () => {
-      console.log('Abrir dúvidas ❓')
+      openModal('help')
     })
 }

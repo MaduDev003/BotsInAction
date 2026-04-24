@@ -8,7 +8,7 @@ export function renderSelectCharacterScreen() {
   setBackground('/src/assets/images/background.png')
 
   app.innerHTML = `
-    <div class="w-screen h-screen flex flex-col items-center justify-center text-white gap-6">
+    <div class="w-screen h-screen flex flex-col items-center justify-center text-white bg-black/80 backdrop-blur-sm gap-6">
       
       <h2 class="text-3xl font-bold">Escolha seu personagem</h2>
 
