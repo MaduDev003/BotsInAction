@@ -19,7 +19,7 @@ export function renderStartScreen() {
     </h1>
 
     <button id="startBtn" 
-      class="bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-xl text-lg font-semibold transition transform hover:scale-105 flex items-center gap-3 shadow-lg hover:shadow-blue-500/30">
+      class="bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-xl text-lg font-semibold transition transform hover:scale-105 flex items-center gap-2 shadow-lg hover:shadow-blue-500/40">
       
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
