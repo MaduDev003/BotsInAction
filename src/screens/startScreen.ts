@@ -1,7 +1,7 @@
 import { setBackground } from '../utils/setBackground'
 import { renderSelectCharacterScreen } from './selectCharacterScreen'
-
 import { renderTopMenu, setupTopMenuEvents } from '../components/topMenu'
+import { playMusic } from '../utils/audioManager'
 
 export function renderStartScreen() {
   const app = document.querySelector('#app')
@@ -35,11 +35,14 @@ export function renderStartScreen() {
 
   </div>
 `
-
+function handleStartGame() {
+  playMusic()
+  renderSelectCharacterScreen()
+}
 
   document
     .querySelector('#startBtn')
-    ?.addEventListener('click', renderSelectCharacterScreen)
+    ?.addEventListener('click', handleStartGame)
 
   setupTopMenuEvents()
 }

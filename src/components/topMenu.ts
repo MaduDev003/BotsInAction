@@ -1,5 +1,6 @@
 import type { ModalType } from '../types/modalTypes'
 import type { LevelType } from '../types/levelTypes'
+import { getVolume, setVolume } from '../utils/audioManager'
 
 let dificultyLevel: LevelType = 'medium'
 
@@ -33,14 +34,13 @@ function openModalByType(modalType: ModalType) {
   if (modalType === 'settings') renderSettingsModal()
 }
 
-
 function renderHelpModal() {
   const modal = document.createElement('div')
 
   modal.className = `fixed inset-0 bg-black/70 flex items-center justify-center z-50`
 
   modal.innerHTML = `
-    <div class="w-[80%] h-[80%] bg-zinc-900 text-white rounded-2xl p-6 relative flex items-center justify-center">
+    <div class="w-[90%] sm:w-[80%] max-w-3xl h-[80%] bg-zinc-900 text-white rounded-2xl p-6 relative flex items-center justify-center">
       
       <button id="closeModal"
         class="absolute top-4 right-4 text-white/70 hover:text-white text-xl">
@@ -64,31 +64,44 @@ function renderSettingsModal() {
   modal.className = `fixed inset-0 bg-black/70 flex items-center justify-center z-50`
 
   modal.innerHTML = `
-    <div class="w-[80%] h-[80%] bg-zinc-900 text-white rounded-2xl p-6 relative">
-      
-      <button id="closeModal"
-        class="absolute top-4 right-4 text-white/70 hover:text-white text-xl">
-        X
-      </button>
+    <div class="w-[92%] sm:w-[85%] md:w-[80%] max-w-4xl h-[80%] bg-zinc-900 text-white rounded-2xl p-8 flex flex-col gap-8 relative">
 
-      <h2 class="text-2xl mb-6">Configurações</h2>
+      <div class="flex justify-between items-center w-full">
+        <h2 class="text-2xl sm:text-xl">Configurações</h2>
 
-      <div class="flex flex-col gap-4">
-        
+        <button id="closeModal" class="text-white/70 hover:text-white text-xl">
+    X
+  </button>
+      </div>
+      <div class="flex flex-col gap-8">
+
         <div>
           <p class="mb-2">Dificuldade</p>
 
-          <div id="dificulty" class="flex gap-2">
-            <button data-level="easy" class="px-3 py-1 bg-white/10 rounded">Fácil</button>
-            <button data-level="medium" class="px-3 py-1 bg-white/10 rounded">Médio</button>
-            <button data-level="hard" class="px-3 py-1 bg-white/10 rounded">Difícil</button>
+          <div id="dificulty" class="flex gap-3 flex-wrap">
+            <button data-level="easy" class="px-5 py-2 text-lg bg-white/10 rounded">Fácil</button>
+            <button data-level="medium" class="px-5 py-2 text-lg bg-white/10 rounded">Médio</button>
+            <button data-level="hard" class="px-5 py-2 text-lg bg-white/10 rounded">Difícil</button>
           </div>
-
         </div>
 
         <div>
           <p class="mb-2">Som</p>
-          <button class="px-3 py-1 bg-white/10 rounded">ON / OFF</button>
+
+          <div class="flex items-center gap-3">
+            <input 
+              id="volumeSlider"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              class="w-full h-2"
+            >
+
+            <span id="volumeValue" class="text-sm">
+              ${Math.round(getVolume() * 100) + '%'}
+            </span>
+          </div>
         </div>
 
       </div>
@@ -97,47 +110,55 @@ function renderSettingsModal() {
 
   document.body.appendChild(modal)
 
+  const slider = document.querySelector('#volumeSlider') as HTMLInputElement
+
+  slider.value = String(getVolume())
+
+  slider.addEventListener('input', () => {
+    const label = document.querySelector('#volumeValue')
+    const value = Number(slider.value)
+
+    setVolume(value)
+
+    if (label) {
+      label.textContent = Math.round(value * 100) + '%'
+    }
+  })
+
   document
     .querySelector('#closeModal')
     ?.addEventListener('click', () => modal.remove())
 
   applySelectedDifficulty()
 
-
   document.querySelector("#dificulty")?.addEventListener("click", (event) => {
     const target = event.target as HTMLElement
-
     if (!target.dataset.level) return
-
     chooseDificultyLevel(target)
   })
 }
 
-function chooseDificultyLevel(target: HTMLElement){
+function chooseDificultyLevel(target: HTMLElement) {
   const level = target.dataset.level as LevelType
-
   if (!level) return
 
   dificultyLevel = level
-
   localStorage.setItem("dificulty", level)
 
   applySelectedDifficulty()
 }
 
-function applySelectedDifficulty(){
+function applySelectedDifficulty() {
   const buttons = document.querySelectorAll("#dificulty button")
 
   buttons.forEach(btn => {
     const level = (btn as HTMLElement).dataset.level
-
     const selected = level === dificultyLevel
 
     btn.classList.toggle("bg-blue-600", selected)
     btn.classList.toggle("bg-white/10", !selected)
   })
 }
-
 
 export function setupTopMenuEvents() {
   document
