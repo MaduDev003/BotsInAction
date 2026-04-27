@@ -1,3 +1,4 @@
+import { renderTopMenu, setupTopMenuEvents } from '../components/topMenuComponent'
 import { setBackground } from '../utils/setBackground'
 
 export function renderGameScreen() {
@@ -8,7 +9,10 @@ export function renderGameScreen() {
 
   app.innerHTML = `
     <div class="w-screen h-screen flex items-center justify-center text-white text-2xl">
+        ${renderTopMenu()}
       🎮 Jogo iniciado...
     </div>
   `
+
+    setupTopMenuEvents();
 }

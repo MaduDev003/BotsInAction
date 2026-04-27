@@ -1,5 +1,6 @@
 import { setBackground } from '../utils/setBackground'
 import { renderGameScreen } from './gameScreen'
+import { renderTopMenu, setupTopMenuEvents } from '../components/topMenuComponent'
 
 export function renderSelectCharacterScreen() {
   const app = document.querySelector('#app')
@@ -9,7 +10,7 @@ export function renderSelectCharacterScreen() {
 
   app.innerHTML = `
     <div class="w-screen h-screen flex flex-col items-center justify-center text-white bg-black/80 backdrop-blur-sm gap-6">
-      
+         ${renderTopMenu()}
       <h2 class="text-3xl font-bold">Escolha seu personagem</h2>
 
       <button id="charBtn" class="bg-green-500 px-6 py-2 rounded">
@@ -22,4 +23,6 @@ export function renderSelectCharacterScreen() {
   document
     .querySelector('#charBtn')
     ?.addEventListener('click', renderGameScreen)
+
+  setupTopMenuEvents();
 }

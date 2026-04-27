@@ -1,6 +1,6 @@
 import { setBackground } from '../utils/setBackground'
 import { renderSelectCharacterScreen } from './selectCharacterScreen'
-import { renderTopMenu, setupTopMenuEvents } from '../components/topMenu'
+import { renderTopMenu, setupTopMenuEvents } from '../components/topMenuComponent'
 import { playMusic } from '../utils/audioManager'
 
 export function renderStartScreen() {

@@ -3,12 +3,8 @@ import baseSound from '../assets/sounds/baseSound.mp3'
 const music = new Audio(baseSound)
 music.loop = true
 
-let volume = 0.5
-
-const savedVolume = localStorage.getItem('volume')
-if (savedVolume) {
-  volume = Number(savedVolume)
-}
+let volume = Number(localStorage.getItem('volume')) || 0.5
+let isMuted = false
 
 music.volume = volume
 
@@ -22,24 +18,21 @@ export function pauseMusic() {
   music.pause()
 }
 
-
 export function setVolume(value: number) {
   volume = value
-  music.volume = value
-
-  localStorage.setItem('volume', value.toString())
+  music.volume = isMuted ? 0 : volume
+  localStorage.setItem('volume', String(value))
 }
 
 export function getVolume() {
   return volume
 }
 
-
-
 export function toggleMute() {
-  if (music.volume > 0) {
-    music.volume = 0
-  } else {
-    music.volume = volume
-  }
+  isMuted = !isMuted
+  music.volume = isMuted ? 0 : volume
+}
+
+export function isAudioMuted() {
+  return isMuted
 }
