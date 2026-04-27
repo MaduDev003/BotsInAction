@@ -10,39 +10,33 @@ export function renderStartScreen() {
   setBackground('/src/assets/images/background.png')
 
   app.innerHTML = `
-  <div class="w-screen h-screen bg-black/80 backdrop-blur-sm flex items-center justify-center flex-col text-white gap-8">
-    
     ${renderTopMenu()}
 
-    <h1 class="text-5xl font-bold tracking-wide">
-      Bots In Action
-    </h1>
+    <div class="min-h-screen w-full bg-black/70 backdrop-blur-md flex items-center justify-center flex-col text-white gap-10 px-4">
 
-    <button id="startBtn" 
-      class="bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-xl text-lg font-semibold transition transform hover:scale-105 flex items-center gap-2 shadow-lg hover:shadow-blue-500/40">
-      
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 24 24" 
-        fill="currentColor" 
-        class="w-7 h-7"
-      >
-        <path d="M8 5v14l11-7z" />
-      </svg>
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-wide text-center animate-fadeIn">
+        Bots In Action
+      </h1>
 
-      <span>Iniciar Jogo</span>
-    </button>
+      <button id="startBtn" 
+        class="bg-blue-600 hover:bg-blue-500 active:scale-95 px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-blue-500/40 hover:scale-105">
+        
+        <svg viewBox="0 0 24 24" class="w-7 h-7 fill-current">
+          <path d="M8 5v14l11-7z" />
+        </svg>
 
-  </div>
-`
-function handleStartGame() {
-  playMusic()
-  renderSelectCharacterScreen()
-}
+        <span>Iniciar Jogo</span>
+      </button>
+
+    </div>
+  `
 
   document
     .querySelector('#startBtn')
-    ?.addEventListener('click', handleStartGame)
+    ?.addEventListener('click', () => {
+      playMusic()
+      renderSelectCharacterScreen()
+    })
 
   setupTopMenuEvents()
 }

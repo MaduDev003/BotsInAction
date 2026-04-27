@@ -1,19 +1,23 @@
 export function renderHelpModal() {
-  const modal = document.createElement('div')
+ const modal = document.createElement('div')
 
-  modal.className =
-    'fixed inset-0 bg-black/70 flex items-center justify-center z-50'
+    modal.className =
+        'fixed inset-0 bg-black/70 flex items-center justify-center z-50'
 
-  modal.innerHTML = `
-    <div class="w-[90%] sm:w-[80%] max-w-3xl h-[80%] bg-zinc-900 text-white rounded-2xl p-6 relative flex items-center justify-center">
-      
-      <button id="closeModal"
-        class="absolute top-4 right-4 text-white/70 hover:text-white text-xl">
-        ✖
-      </button>
+    modal.innerHTML = `
+    <div class="w-[92%] sm:w-[85%] md:w-[80%] max-w-4xl h-[80%] bg-zinc-900 text-white rounded-2xl p-8 flex flex-col gap-8 relative">
 
-      <h2 class="text-2xl">hi jessica 👀</h2>
-    </div>
+      <div class="flex justify-between items-center w-full">
+        <h2 class="text-2xl sm:text-xl">Dúvidas</h2>
+
+        <button id="closeModal" class="text-white/70 hover:text-white text-xl">
+          X
+        </button>
+      </div>
+
+      <div>
+        <p class="mb-2">Como jogar?</p>
+      </div>
   `
 
   document.body.appendChild(modal)
