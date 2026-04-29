@@ -16,7 +16,7 @@ export function renderHelpModal() {
           </button>
         </div>
 
-        <div class="flex-1 overflow-y-auto flex flex-col gap-8 pr-2">
+        <div class="flex-1 overflow-y-auto flex flex-col gap-10 pr-2">
 
           <div class="flex flex-col gap-2">
             <p class="mb-2">Objetivo do Jogo:</p>
@@ -27,7 +27,7 @@ export function renderHelpModal() {
             </p>
           </div>
 
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-3">
             <p class="font-medium">Como Jogar:</p>
 
             <p class="text-sm text-white/70">
@@ -45,6 +45,7 @@ export function renderHelpModal() {
           </div>
 
         <div class="flex flex-col gap-3">
+            <p class="font-medium">Sobre os ícones que irão aparecer:</p>
             <p class="text-sm text-white/70">
               Os que você precisa capturar:
             </p>
@@ -98,7 +99,7 @@ export function renderHelpModal() {
             </div>
           </div>   
 
-            <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-3">
             <p class="text-sm text-white/70">
               Os que você precisa desviar:
             </p>
