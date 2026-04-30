@@ -93,7 +93,7 @@ export function renderHelpModal() {
               </div>
 
               <div class="bg-red-500/5 border border-red-500/10 p-3 rounded-xl flex items-center gap-4 hover:bg-red-500/10 transition">
-                <img src="/src/assets/images/crash_error.png" class="w-16 h-16 object-contain">
+                <img src="/src/assets/images/crashError.png" class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold text-white">Erro 500</span>
                   <p class="text-sm text-white/60">Reduz velocidade e perde 2 vidas</p>

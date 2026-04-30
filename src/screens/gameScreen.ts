@@ -9,40 +9,46 @@ export function renderGameScreen() {
 
   app.innerHTML = `
     <div class="bg-neutral-900/20 backdrop-blur-sm w-screen h-20 relative">
-
       <div>
         ${renderTopMenu()}
       </div>
-
-      <div class="absolute top-4 left-4 z-40">
-        <div class="flex items-center gap-3 
-                    bg-zinc-900/70 backdrop-blur-md 
-                    px-3 py-2 rounded-xl 
+      <div class="absolute md:top-4 sm:top-4 top-5 left-4 z-40">
+        <div class="flex items-center gap-3
+                    bg-zinc-900/70 backdrop-blur-md
+                    px-4 py-2 rounded-xl
                     border border-white/10 shadow-md">
 
-          <div id="lives" class="flex gap-1 text-sm">
-            ❤️❤️❤️❤️❤️
+          <div id="lives" class="flex items-center gap-1">
+            <img src="/src/assets/images/redHeart.png" class="w-5 h-5">
+            <img src="/src/assets/images/redHeart.png" class="w-5 h-5">
+            <img src="/src/assets/images/redHeart.png" class="w-5 h-5">
+            <img src="/src/assets/images/redHeart.png" class="w-5 h-5">
+            <img src="/src/assets/images/blackHeart.png" class="w-5 h-5">
           </div>
 
           <div class="w-px h-4 bg-white/20"></div>
 
-          <div id="score" class="text-sm">
-            ⭐ 0
+          <div id="score" class="flex items-center gap-2 text-sm">
+           
+            <span class="text-white/70">Pontos: 0</span>
           </div>
-
         </div>
       </div>
-
     </div>
-
-    <!-- GAME -->
-    <div class="w-screen h-[calc(100vh-80px)] flex items-center justify-center text-white text-2xl">
-      🎮 Jogo iniciado...
+    <div id="gameArea"
+         class="w-screen h-[calc(100vh-80px)]
+                flex items-center justify-center
+                text-white text-2xl
+                relative">
+      <span class="opacity-60 tracking-wide">
+        🎮 Jogo iniciado...
+      </span>
     </div>
   `
 
   setupTopMenuEvents()
 }
+
 //function para renderizar os elementos em tela ( 500, bug, js, html e tailwind )
 //function para controle de danos ( perda de vida e redução da velocidade do personagem)
 //function para controle de pontos ganhos e perdidos 
