@@ -56,15 +56,25 @@ export function renderSettingsModal() {
           </div>
         </div>
 
-        <div>
-          <h3 class="mb-2">Reiniciar Jogo</h3>
+        <div class="flex gap-10 flex-wrap flex-row">
+          <div>
+            <h3 class="mb-2">Reiniciar Jogo</h3>
 
-          <button id="resetGameBtn"
-            class="px-5 py-2 text-lg bg-white/10 rounded hover:bg-blue-600 text-white">
-            Reiniciar
-          </button>
-        </div>
+            <button id="resetGameBtn"
+              class="px-5 py-2 text-lg bg-white/10 rounded hover:bg-blue-600 text-white">
+              Reiniciar Jogo
+            </button>
+          </div>
 
+          <div>
+            <h3 class="mb-2">Voltar a tela Inicial</h3>
+
+            <button id="backToMainMenuBtn"
+              class="px-5 py-2 text-lg bg-white/10 rounded hover:bg-blue-600 text-white">
+              Tela inicial
+            </button>
+          </div>
+      </div>
       </div>
     </div>
   `
@@ -96,6 +106,10 @@ export function renderSettingsModal() {
 
     const resetBtn = modal.querySelector('#resetGameBtn') as HTMLButtonElement
     resetBtn?.addEventListener('click', resetGame)
+
+    
+    const backToMainMenuBtn = modal.querySelector('#backToMainMenuBtn') as HTMLButtonElement
+    backToMainMenuBtn?.addEventListener('click', resetGame)
 }
 
 function resetGame() {
