@@ -7,7 +7,7 @@ export function renderGameScreen() {
 
   setBackground('/src/assets/images/background.png')
     app.innerHTML = `
-      <!-- TOP MENU (continua absolute, do seu jeito) -->
+    <div class="bg-neutral-900/20 backdrop-blur-sm w-screen h-20 relative overflow-hidden">
       <div class="absolute top-4 right-4 z-50">
         ${renderTopMenu()}
       </div>
@@ -30,8 +30,7 @@ export function renderGameScreen() {
 
         </div>
       </div>
-
-      <!-- GAME -->
+    </div>
       <div class="w-screen h-screen flex items-center justify-center text-white text-2xl">
         🎮 Jogo iniciado...
       </div>

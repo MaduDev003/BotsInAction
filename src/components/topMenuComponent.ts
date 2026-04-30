@@ -4,7 +4,7 @@ import { renderHelpModal } from './modals/helpModalComponent'
 
 export function renderTopMenu() {
   return `
-    <div class="absolute top-3 right-4 flex gap-2 sm:gap-4">
+    <div class="absolute top-2 right-4 flex gap-2 sm:gap-4">
       
       <button id="settingsBtn"
         class="flex items-center justify-center sm:justify-start 
