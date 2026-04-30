@@ -6,13 +6,15 @@ export function renderGameScreen() {
   if (!app) return
 
   setBackground('/src/assets/images/background.png')
-    app.innerHTML = `
-    <div class="bg-neutral-900/20 backdrop-blur-sm w-screen h-20 relative overflow-hidden">
-      <div class="absolute top-4 right-4 z-50">
+
+  app.innerHTML = `
+    <div class="bg-neutral-900/20 backdrop-blur-sm w-screen h-20 relative">
+
+      <div>
         ${renderTopMenu()}
       </div>
 
-      <div class="fixed top-6 left-4 z-40">
+      <div class="absolute top-4 left-4 z-40">
         <div class="flex items-center gap-3 
                     bg-zinc-900/70 backdrop-blur-md 
                     px-3 py-2 rounded-xl 
@@ -30,15 +32,17 @@ export function renderGameScreen() {
 
         </div>
       </div>
+
     </div>
-      <div class="w-screen h-screen flex items-center justify-center text-white text-2xl">
-        🎮 Jogo iniciado...
-      </div>
+
+    <!-- GAME -->
+    <div class="w-screen h-[calc(100vh-80px)] flex items-center justify-center text-white text-2xl">
+      🎮 Jogo iniciado...
+    </div>
   `
 
   setupTopMenuEvents()
 }
-
 //function para renderizar os elementos em tela ( 500, bug, js, html e tailwind )
 //function para controle de danos ( perda de vida e redução da velocidade do personagem)
 //function para controle de pontos ganhos e perdidos 

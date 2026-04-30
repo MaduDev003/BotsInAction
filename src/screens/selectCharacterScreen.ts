@@ -26,7 +26,7 @@ export function renderSelectCharacterScreen() {
             <img 
               src="/src/assets/images/characters/boot1.png"  
               alt="Robo 1" 
-              class="max-w-56 h-56 object-contain mx-auto"
+            class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain mx-auto"
             >
           </div>
         </button>
@@ -38,7 +38,7 @@ export function renderSelectCharacterScreen() {
             <img 
               src="/src/assets/images/characters/boot2.png"  
               alt="Robo 2" 
-              class="max-w-56 h-56 object-contain mx-auto"
+              class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain mx-auto"
             >
           </div>
         </button>
