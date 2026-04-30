@@ -10,19 +10,57 @@ export function renderSelectCharacterScreen() {
 
   app.innerHTML = `
     <div class="w-screen h-screen flex flex-col items-center justify-center text-white bg-black/80 backdrop-blur-sm gap-6">
-         ${renderTopMenu()}
-      <h2 class="text-3xl font-bold">Escolha seu personagem</h2>
+      
+      ${renderTopMenu()}
 
-      <button id="charBtn" class="bg-green-500 px-6 py-2 rounded">
-        🤖 Robô
-      </button>
+      <h2 class="text-2xl font-bold mt-10 mb-6">
+        Escolha seu personagem
+      </h2>
 
+      <div id="containerPersonagens" class="flex gap-10 w-[80%] justify-center flex-wrap">
+        
+        <button id="boot1" class="group">
+          <div class="bg-zinc-800/70 rounded-xl border-2 border-transparent p-4 
+                      transition-all duration-300 
+                      group-hover:border-blue-500 group-hover:scale-105">
+            <img 
+              src="/src/assets/images/characters/boot1.png"  
+              alt="Robo 1" 
+              class="max-w-56 h-56 object-contain mx-auto"
+            >
+          </div>
+        </button>
+
+        <button id="boot2" class="group">
+          <div class="bg-zinc-800/70 rounded-xl border-2 border-transparent p-4 
+                      transition-all duration-300 
+                      group-hover:border-blue-500 group-hover:scale-105">
+            <img 
+              src="/src/assets/images/characters/boot2.png"  
+              alt="Robo 2" 
+              class="max-w-56 h-56 object-contain mx-auto"
+            >
+          </div>
+        </button>
+
+      </div>
     </div>
   `
 
-  document
-    .querySelector('#charBtn')
-    ?.addEventListener('click', renderGameScreen)
+  const container = document.querySelector('#containerPersonagens')
 
-  setupTopMenuEvents();
+  container?.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement
+
+    const button = target.closest('button')
+    if (!button) return
+
+    const id = button.id
+
+    localStorage.setItem('selectedCharacter', id)
+
+    renderGameScreen()
+  })
+
+  setupTopMenuEvents()
 }

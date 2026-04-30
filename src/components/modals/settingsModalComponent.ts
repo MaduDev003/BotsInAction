@@ -18,9 +18,11 @@ export function renderSettingsModal() {
       <div class="flex justify-between items-center w-full">
         <h2 class="text-2xl sm:text-xl">Configurações</h2>
 
-        <button id="closeModal" class="text-white/70 hover:text-white text-xl">
-          X
-        </button>
+          <button id="closeModal"
+            class="w-8 h-8 flex items-center justify-center rounded-full 
+                   text-white/70 hover:text-white hover:bg-zinc-800 transition">
+            X
+          </button>
       </div>
 
       <div class="flex flex-col gap-8">

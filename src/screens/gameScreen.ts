@@ -6,7 +6,7 @@ export function renderGameScreen() {
   if (!app) return
 
   setBackground('/src/assets/images/background.png')
-
+  console.log(localStorage.getItem('selectedCharacter'))
   app.innerHTML = `
     <div class="w-screen h-screen flex items-center justify-center text-white text-2xl">
         ${renderTopMenu()}
