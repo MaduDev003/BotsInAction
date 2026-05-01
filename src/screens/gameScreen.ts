@@ -4,7 +4,11 @@ import {
 } from "../components/topMenuComponent";
 import { setBackground } from "../utils/setBackground";
 import type { ItemType } from "../types/itemTypes";
+
 let score = 0;
+let isGamePaused = false;
+let controlsInitialized = false;
+
 export function renderGameScreen() {
   const app = document.querySelector("#app");
   if (!app) return;
@@ -48,9 +52,23 @@ export function renderGameScreen() {
 
   setupTopMenuEvents();
   startItemSpawner();
+  setupControls();
 }
 
-function startItemSpawner(){
+function setupControls() {
+  if (controlsInitialized) return;
+
+  document.addEventListener("keydown", (event) => {
+    if (event.code === "Space") {
+      event.preventDefault();
+      togglePause();
+    }
+  });
+
+  controlsInitialized = true;
+}
+
+function startItemSpawner() {
   const types: ItemType[] = [
     "bug",
     "crashError",
@@ -60,6 +78,8 @@ function startItemSpawner(){
   ];
 
   setInterval(() => {
+    if (isGamePaused) return;
+
     const randomType = types[Math.floor(Math.random() * types.length)];
     spawnItemByType(randomType);
   }, 500);
@@ -74,7 +94,7 @@ function spawnItemByType(type: ItemType) {
   item.className = "w-24 h-24 absolute animate-fall";
   item.style.top = "0px";
 
-  const positionAtX = Math.random() * (window.innerWidth - 80);
+  const positionAtX = Math.random() * (gameArea.clientWidth - 96);
   item.style.left = `${positionAtX}px`;
 
   const images = {
@@ -89,45 +109,54 @@ function spawnItemByType(type: ItemType) {
     <img src="${images[type]}" class="w-full h-full object-contain">
   `;
 
- 
   setupItemActions(item, type);
   gameArea.appendChild(item);
 }
 
 function updateScore(value: number) {
-  const scoreElement = document.querySelector('#score span')
-  if (!scoreElement) return
+  const scoreElement = document.querySelector("#score span");
+  if (!scoreElement) return;
 
-  score += value
-  if (score < 0) score = 0
-  
-  scoreElement.textContent = `Pontos: ${score}`
+  score += value;
+  if (score < 0) score = 0;
+
+  scoreElement.textContent = `Pontos: ${score}`;
 }
 
 function setupItemActions(item: HTMLElement, type: ItemType) {
   item.addEventListener("click", () => {
+    if (isGamePaused) return;
+
     switch (type) {
       case "html":
       case "tailwind":
-        console.log("+1 ponto")
         updateScore(1);
-        break
+        break;
 
       case "javascript":
-        console.log("+velocidade + imunidade")
         updateScore(1);
-        break
+        break;
 
       case "bug":
-        console.log("clicou errado 😈 -vida")
         updateScore(-1);
-        break
-      case "crashError": 
-        console.log("clicou errado 😈 -vida")
-        updateScore(-2)
-        break
+        break;
+
+      case "crashError":
+        updateScore(-2);
+        break;
     }
 
-    item.remove()
-  })
+    item.remove();
+  });
+}
+
+function togglePause() {
+  isGamePaused = !isGamePaused;
+
+  const items = document.querySelectorAll(".animate-fall");
+
+  items.forEach((item) => {
+    (item as HTMLElement).style.animationPlayState =
+      isGamePaused ? "paused" : "running";
+  });
 }
