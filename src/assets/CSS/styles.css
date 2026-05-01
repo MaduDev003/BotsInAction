@@ -16,3 +16,16 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #71717a;
 }
+
+@keyframes fall {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+.animate-fall {
+  animation: fall 1.5s linear forwards;
+}

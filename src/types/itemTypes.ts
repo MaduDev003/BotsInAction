@@ -1,0 +1,1 @@
+export type ItemType = 'bug' | 'crashError' | 'javascript' | 'tailwind' | 'html'
