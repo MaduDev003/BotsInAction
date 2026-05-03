@@ -73,14 +73,22 @@ function setupControls() {
 }
 
 function startItemSpawner() {
-  const types: ItemType[] = ["bug", "crashError", "javascript", "tailwind", "html"];
-
   setInterval(() => {
     if (isGamePaused) return;
 
-    const type = types[Math.floor(Math.random() * types.length)];
+    const type = getRandomType();
     spawnItem(type);
-  }, 500);
+  }, 800); 
+}
+
+function getRandomType(): ItemType {
+  const rand = Math.random();
+
+  if (rand < 0.1) return "bug";          
+  if (rand < 0.2) return "crashError";   
+  if (rand < 0.5) return "javascript";   
+  if (rand < 0.75) return "tailwind";  
+  return "html";                        
 }
 
 function spawnItem(type: ItemType) {
@@ -93,7 +101,7 @@ function spawnItem(type: ItemType) {
   item.style.top = "0px";
   item.style.left = `${Math.random() * (gameArea.clientWidth - 96)}px`;
 
-  item.dataset.type = type; // 👈 guarda o tipo aqui
+  item.dataset.type = type;
 
   const images = {
     bug: "/src/assets/images/bug.png",
