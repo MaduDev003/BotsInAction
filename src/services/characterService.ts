@@ -42,22 +42,22 @@ export function characterMovement() {
 export function checkCharacterCollisions() {
   const items = document.querySelectorAll(".animate-fall");
 
-  const c = getCharacterInstance()
+  const character = getCharacterInstance()
     .element
     .getBoundingClientRect();
 
   for (const item of items) {
-    const el = item as HTMLElement;
+    const element = item as HTMLElement;
 
-    const i = el.getBoundingClientRect();
+    const itemBounds  = element.getBoundingClientRect();
 
     if (
-      c.left < i.right &&
-      c.right > i.left &&
-      c.top < i.bottom &&
-      c.bottom > i.top
+      character.left < itemBounds.right &&
+      character.right > itemBounds .left &&
+      character.top < itemBounds .bottom &&
+      character.bottom > itemBounds .top
     ) {
-      return el;
+      return element;
     }
   }
 

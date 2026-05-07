@@ -72,7 +72,7 @@ export function renderGameScreen() {
   lifeManager();
   setupControls();
   characterMovement();
-  startItemSpawner(isGamePaused);
+  startItemSpawner(() => isGamePaused);
 
   setInterval(checkCollisions, 100);
 }
