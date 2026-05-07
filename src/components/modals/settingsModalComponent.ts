@@ -1,10 +1,5 @@
 
 import { getVolume, setVolume } from '../../utils/audioManager'
-import type { LevelType } from '../../types/levelTypes'
-import { loadDifficulty, resetDifficulty, saveDifficulty } from '../../utils/gameSettings'
-
-
-let difficultyLevel: LevelType = loadDifficulty()
 
 export function renderSettingsModal() {
     const modal = document.createElement('div')
@@ -26,16 +21,6 @@ export function renderSettingsModal() {
       </div>
 
       <div class="flex flex-col gap-8">
-
-        <div>
-          <p class="mb-2">Dificuldade</p>
-
-          <div id="dificulty" class="flex gap-3 flex-wrap">
-            <button data-level="easy" class="px-5 py-2 text-lg bg-white/10 rounded hover:bg-blue-600">Fácil</button>
-            <button data-level="medium" class="px-5 py-2 text-lg bg-white/10 rounded hover:bg-blue-600">Médio</button>
-            <button data-level="hard" class="px-5 py-2 text-lg bg-white/10 rounded hover:bg-blue-600">Difícil</button>
-          </div>
-        </div>
 
         <div>
           <p class="mb-2">Som</p>
@@ -90,14 +75,6 @@ export function renderSettingsModal() {
         label.textContent = Math.round(value * 100) + '%'
     })
 
-    applySelectedDifficulty()
-
-    modal.querySelector("#dificulty")
-        ?.addEventListener("click", (event) => {
-            const target = event.target as HTMLElement
-            if (!target.dataset.level) return
-            chooseDifficultyLevel(target)
-        })
 
     const resetBtn = modal.querySelector('#resetGameBtn') as HTMLButtonElement
     resetBtn?.addEventListener('click', resetGame)
@@ -108,30 +85,6 @@ export function renderSettingsModal() {
 }
 
 function resetGame() {
-    resetDifficulty()
     location.reload()
 }
 
-function chooseDifficultyLevel(target: HTMLElement) {
-    const level = target.dataset.level as LevelType
-    if (!level) return
-
-    difficultyLevel = level
-    saveDifficulty(level)
-
-    applySelectedDifficulty()
-}
-
-function applySelectedDifficulty() {
-    const buttons = document.querySelectorAll("#dificulty button")
-
-    buttons.forEach(btn => {
-        const level = (btn as HTMLElement).dataset.level
-        const selected = level === difficultyLevel
-
-        btn.classList.toggle("bg-blue-600", selected)
-        btn.classList.toggle("bg-white/10", !selected)
-    })
-
-
-}

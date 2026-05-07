@@ -64,7 +64,7 @@ export function renderHelpModal() {
                 <img src="/src/assets/images/javascript.png" class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold">JavaScript</span>
-                  <p class="text-sm text-white/60">+2 velocidade e imunidade por 5s</p>
+                  <p class="text-sm text-white/60">imunidade por 3s e +1 ponto</p>
                 </div>
               </div>
 
