@@ -30,3 +30,9 @@ export function loseLife(amount: number = 1) {
     alert("Game Over");
   }
 }
+
+export function resetLives() {
+  currentLives = 4;
+  lifeManager();
+
+}

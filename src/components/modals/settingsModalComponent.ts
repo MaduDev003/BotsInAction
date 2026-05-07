@@ -1,5 +1,6 @@
 
-import { getVolume, setVolume } from '../../utils/audioManager'
+import { getVolume, setVolume } from '../../services/audioService'
+import { restartGame } from '../../services/gameService'
 
 export function renderSettingsModal() {
     const modal = document.createElement('div')
@@ -77,7 +78,10 @@ export function renderSettingsModal() {
 
 
     const resetBtn = modal.querySelector('#resetGameBtn') as HTMLButtonElement
-    resetBtn?.addEventListener('click', resetGame)
+    resetBtn?.addEventListener('click',  () => {
+      restartGame();
+      modal.remove();
+    })
 
     
     const backToMainMenuBtn = modal.querySelector('#backToMainMenuBtn') as HTMLButtonElement

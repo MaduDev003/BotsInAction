@@ -12,7 +12,7 @@ import {
 import {
   pauseMusic,
   playMusic,
-} from "../utils/audioManager";
+} from "../services/audioService";
 import {
   lifeManager
 } from "../services/lifeService";
@@ -91,7 +91,6 @@ function setupControls() {
   controlsInitialized = true;
 }
 
-
 function checkCollisions() {
   const collision = checkCharacterCollisions();
 
@@ -101,7 +100,6 @@ function checkCollisions() {
     collision.remove();
   }
 }
-
 
 function togglePause() {
   isGamePaused = !isGamePaused;

@@ -1,7 +1,7 @@
 import { setBackground } from '../utils/setBackground'
 import { renderSelectCharacterScreen } from './selectCharacterScreen'
 import { renderTopMenu, setupTopMenuEvents } from '../components/topMenuComponent'
-import { playMusic } from '../utils/audioManager'
+import { playMusic } from '../services/audioService'
 
 export function renderStartScreen() {
   const app = document.querySelector('#app')
