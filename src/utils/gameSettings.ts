@@ -13,3 +13,7 @@ export function saveDifficulty(level: LevelType) {
 export function resetDifficulty() {
   localStorage.removeItem(KEY)
 }
+
+export function restartGame(){
+  
+}
