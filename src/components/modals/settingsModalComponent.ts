@@ -46,7 +46,7 @@ export function renderSettingsModal() {
           <div>
             <button id="backToMainMenuBtn"
               class="px-5 py-2 text-lg bg-white/10 rounded hover:bg-blue-600 text-white">
-              Tela inicial
+              Menu Principal
             </button>
           </div>
           <div>

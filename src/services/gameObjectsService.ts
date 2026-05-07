@@ -12,19 +12,24 @@ export default function startItemSpawner(
     spawnItem(type);
   }, 800);
 }
+
 function getRandomType(): ItemType {
   spawnCount++;
 
-  if (spawnCount >= 8) {
-    spawnCount = 0;
-
-    return "crashError";
-  }
+  const isSmallScreen = window.innerWidth < 640;
 
   const rand = Math.random();
 
-  if (rand < 0.5) return "bug";
-  if (rand < 0.75) return "javascript";
+  if (isSmallScreen) {
+    if (rand < 0.35) return "bug";
+    if (rand < 0.55) return "javascript";
+    if (rand < 0.75) return "tailwind";
+    return "html";
+  }
+
+  if(rand < 0.25) return "crashError";
+  if (rand < 0.4) return "bug";
+  if (rand < 0.55) return "javascript";
   if (rand < 0.9) return "tailwind";
 
   return "html";

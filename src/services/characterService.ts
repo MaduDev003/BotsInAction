@@ -56,9 +56,9 @@ export function checkCharacterCollisions() {
 
     if (
       character.left < itemBounds.right &&
-      character.right > itemBounds .left &&
-      character.top < itemBounds .bottom &&
-      character.bottom > itemBounds .top
+      character.right > itemBounds.left &&
+      character.top < itemBounds.bottom &&
+      character.bottom > itemBounds.top
     ) {
       return element;
     }

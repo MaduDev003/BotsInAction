@@ -19,9 +19,9 @@ export function updateScore(type: string) {
     loseLife(1);
 
   } else if (type === "crashError") {
-    value = -2;
+    value = -1;
 
-    loseLife(2);
+    loseLife(1);
 
   } else {
     value = 1;

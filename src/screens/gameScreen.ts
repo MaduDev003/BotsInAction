@@ -2,20 +2,19 @@ import {
   renderTopMenu,
   setupTopMenuEvents,
 } from "../components/topMenuComponent";
+
 import { setBackground } from "../utils/setBackground";
+
 import {
   renderCharacter,
   characterMovement,
   createCharacter,
   checkCharacterCollisions,
+  getCharacterInstance,
 } from "../services/characterService";
-import {
-  pauseMusic,
-  playMusic,
-} from "../services/audioService";
-import {
-  lifeManager
-} from "../services/lifeService";
+
+import { pauseMusic, playMusic } from "../services/audioService";
+import { lifeManager } from "../services/lifeService";
 import startItemSpawner from "../services/gameObjectsService";
 import { updateScore } from "../services/scoreService";
 
@@ -39,8 +38,7 @@ export function renderGameScreen() {
       <div class="absolute top-5 left-4 z-40">
         <div class="flex items-center gap-3 bg-zinc-900/70 px-4 py-2 rounded-xl">
 
-          <div id="lives" class="flex gap-1">
-          </div>
+          <div id="lives" class="flex gap-1"></div>
 
           <div class="w-px h-4 bg-white/20"></div>
 
@@ -61,9 +59,9 @@ export function renderGameScreen() {
       <img
         id="character"
         src="/src/assets/images/characters/${renderCharacter()}.png"
-        class="w-60 h-60 absolute bottom-2"
+        class="w-44 h-44 sm:w-52 sm:h-52 md:w-56 md:h-56 lg:w-60 lg:h-60 object-contain absolute bottom-2"
         alt="Personagem"
-      >
+      />
     </div>
   `;
 
@@ -71,6 +69,7 @@ export function renderGameScreen() {
   setupTopMenuEvents();
   lifeManager();
   setupControls();
+
   characterMovement(() => isGamePaused);
   startItemSpawner(() => isGamePaused);
 
@@ -83,7 +82,6 @@ function setupControls() {
   document.addEventListener("keydown", (event) => {
     if (event.code === "Space") {
       event.preventDefault();
-
       togglePause();
     }
   });
@@ -94,24 +92,36 @@ function setupControls() {
 function checkCollisions() {
   const collision = checkCharacterCollisions();
 
-  if (collision) {
-    updateScore(collision.dataset.type || "");
+  if (!collision) return;
 
-    collision.remove();
+  const typeOfItem = collision.dataset.type;
+  const character = getCharacterInstance();
+
+  if (typeOfItem === "javascript") {
+    character.activateProtection();
   }
+
+  if (
+    typeOfItem === "bug" &&
+    character.getProtectionState()
+  ) {
+    collision.remove();
+    return;
+  }
+
+  updateScore(typeOfItem || "");
+  collision.remove();
 }
+
 
 function togglePause() {
   isGamePaused = !isGamePaused;
 
-  isGamePaused
-    ? pauseMusic()
-    : playMusic();
+  isGamePaused ? pauseMusic() : playMusic();
 
   document.querySelectorAll(".animate-fall").forEach((item) => {
-    (item as HTMLElement).style.animationPlayState =
-      isGamePaused
-        ? "paused"
-        : "running";
+    (item as HTMLElement).style.animationPlayState = isGamePaused
+      ? "paused"
+      : "running";
   });
 }
