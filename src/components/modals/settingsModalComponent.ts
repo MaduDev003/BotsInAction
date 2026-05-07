@@ -9,7 +9,7 @@ export function renderSettingsModal() {
         'fixed inset-0 bg-black/70 flex items-center justify-center z-50'
 
     modal.innerHTML = `
-    <div class="w-[92%] sm:w-[85%] md:w-[80%] max-w-4xl h-[80%] bg-zinc-900 pr-2 text-white rounded-2xl p-8 flex flex-col gap-8 relative">
+    <div class="w-[92%] sm:w-[85%] md:w-[80%] max-w-4xl h-[80%] bg-zinc-900 text-white rounded-2xl p-8 flex flex-col gap-8 relative">
 
       <div class="flex justify-between items-center w-full">
         <h2 class="text-2xl sm:text-xl">Configurações</h2>

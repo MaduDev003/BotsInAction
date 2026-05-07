@@ -1,6 +1,7 @@
 import { resetLives } from "./lifeService";
 import { renderGameScreen } from "../screens/gameScreen";
 import { pauseMusic, playMusic } from "./audioService";
+import { characterMovement, getCharacterInstance } from "./characterService";
 
 let isGamePaused = false;
 
@@ -27,6 +28,7 @@ export function restartGame() {
   }
 
   resetLives();
+  characterMovement(() => isGamePaused);
 }
 
 export function gameOver() {
@@ -93,8 +95,8 @@ export function gameOver() {
 }
 
 export function pauseGame() {
-
   isGamePaused = true;
+  getCharacterInstance().stopMovement();
 
   pauseMusic();
 
@@ -123,7 +125,6 @@ export function resumeGame() {
 }
 
 export function togglePauseGame() {
-
   isGamePaused
     ? resumeGame()
     : pauseGame();

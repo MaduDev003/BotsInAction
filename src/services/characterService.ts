@@ -23,10 +23,13 @@ export function renderCharacter(): string {
   );
 }
 
-export function characterMovement() {
+export function characterMovement(getIsGamePaused: () => boolean) {
   if (movementInitialized) return;
 
   document.addEventListener("keydown", (e) => {
+
+    if (getIsGamePaused()) return;
+
     if (e.code === "ArrowLeft") {
       characterInstance.move("left");
     }

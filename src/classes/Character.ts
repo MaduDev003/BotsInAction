@@ -9,7 +9,7 @@ export default class Character {
     this.speed = 25;
   }
 
-  move(direction: "left" | "right") {
+  move(direction: "left" | "right" | "none") {
     const gameArea = document.querySelector("#gameArea") as HTMLElement;
 
     if (!gameArea) return;
@@ -22,12 +22,13 @@ export default class Character {
       this.x += this.speed;
     }
 
+    if (direction === "none") {
+      return;
+    }
+
     this.x = Math.max(
       0,
-      Math.min(
-        this.x,
-        gameArea.clientWidth - this.element.clientWidth
-      )
+      Math.min(this.x, gameArea.clientWidth - this.element.clientWidth),
     );
 
     this.render();
@@ -35,5 +36,9 @@ export default class Character {
 
   render() {
     this.element.style.transform = `translateX(${this.x}px)`;
+  }
+
+  stopMovement() {
+    this.move("none");
   }
 }

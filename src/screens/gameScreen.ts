@@ -71,7 +71,7 @@ export function renderGameScreen() {
   setupTopMenuEvents();
   lifeManager();
   setupControls();
-  characterMovement();
+  characterMovement(() => isGamePaused);
   startItemSpawner(() => isGamePaused);
 
   setInterval(checkCollisions, 100);
