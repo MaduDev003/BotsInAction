@@ -1,3 +1,5 @@
+
+import { gameOver } from "./gameService";
 let currentLives = 4;
 
 export function lifeManager() {
@@ -27,7 +29,7 @@ export function loseLife(amount: number = 1) {
   lifeManager();
 
   if (currentLives <= 0) {
-    alert("Game Over");
+    gameOver();
   }
 }
 

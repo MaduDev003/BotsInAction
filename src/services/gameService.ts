@@ -1,25 +1,68 @@
 import { resetLives } from "./lifeService";
+import { renderGameScreen } from "../screens/gameScreen";
 
 export function restartGame() {
-
-  const scoreElement = document.querySelector(
-    "#score span"
-  ) as HTMLElement;
+  const scoreElement = document.querySelector("#score span") as HTMLElement;
 
   if (scoreElement) {
     scoreElement.textContent = "Pontos: 0";
   }
 
-  document
-    .querySelectorAll(".animate-fall")
-    .forEach((item) => item.remove());
+  document.querySelectorAll(".animate-fall").forEach((item) => item.remove());
 
-  const character = document.querySelector(
-    "#character"
-  ) as HTMLElement;
+  const character = document.querySelector("#character") as HTMLElement;
 
   if (character) {
     character.style.transform = "translateX(0px)";
   }
   resetLives();
+}
+
+export function gameOver() {
+  const app = document.querySelector("#app") as HTMLElement;
+
+  app.innerHTML = `
+  
+    <div class="w-full min-h-screen bg-black/70 backdrop-blur-sm flex items-center justify-center px-4">
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 sm:p-10 w-full max-w-lg text-white flex flex-col items-center gap-8 shadow-2xl">
+        <h1 class=" text-5xl sm:text-6xl font-bold  text-red-700 animate-pulse">
+          Game Over
+        </h1>
+
+        <p class="text-zinc-400 text-center text-base sm:text-lg">
+          Os bugs dominaram o sistema 
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 w-full">
+          <button
+            id="restartBtn"
+            class="flex-1 bg-blue-600 hover:bg-blue-500 transition-all rounded-xl py-4 font-semibold active:scale-95">
+              <p>Reiniciar</p>
+          </button>
+
+          <button
+            id="mainMenuBtn"
+            class="flex-1 bg-zinc-800 hover:bg-zinc-700 transition-all rounded-xl py-4 font-semibold active:scale-95">
+            <p>Menu Principal</p>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  `;
+
+  const mainMenuBtn = document.querySelector("#mainMenuBtn");
+  if (mainMenuBtn) {
+    mainMenuBtn.addEventListener("click", () => {
+      location.reload();
+    });
+  }
+
+  const restartBtn = document.querySelector("#restartBtn");
+  if (restartBtn) {
+    restartBtn.addEventListener("click", () => {
+      resetLives();
+      renderGameScreen();
+    });
+  }
 }
