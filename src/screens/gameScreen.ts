@@ -104,15 +104,16 @@ function checkCollisions() {
     character.activateProtection();
   }
 
-  if (isDanger && character.getProtectionState()) {
-    collision.remove();
-
+  if (isDanger) {
     character.element.classList.add("animate-blink");
 
     setTimeout(() => {
       character.element.classList.remove("animate-blink");
     }, 300);
+  }
 
+  if (isDanger && character.getProtectionState()) {
+    collision.remove();
     return;
   }
 
