@@ -64,4 +64,5 @@ export default class Character {
   getProtectionState() {
     return this.isProtected;
   }
+
 }

@@ -97,15 +97,22 @@ function checkCollisions() {
   const typeOfItem = collision.dataset.type;
   const character = getCharacterInstance();
 
+  const isDanger =
+    typeOfItem === "bug" || typeOfItem === "crashError";
+
   if (typeOfItem === "javascript") {
     character.activateProtection();
   }
 
-  if (
-    typeOfItem === "bug" &&
-    character.getProtectionState()
-  ) {
+  if (isDanger && character.getProtectionState()) {
     collision.remove();
+
+    character.element.classList.add("animate-blink");
+
+    setTimeout(() => {
+      character.element.classList.remove("animate-blink");
+    }, 300);
+
     return;
   }
 
