@@ -1,4 +1,4 @@
-import { loseLife } from "./lifeService";
+import { gainLife, loseLife } from "./lifeService";
 
 let score = 0;
 
@@ -22,6 +22,10 @@ export function updateScore(type: string) {
     value = -1;
 
     loseLife(1);
+
+  } else if(type === "html"){
+    gainLife();
+    value = 1;
 
   } else {
     value = 1;

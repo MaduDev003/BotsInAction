@@ -33,6 +33,16 @@ export function loseLife(amount: number = 1) {
   }
 }
 
+export function gainLife(){
+  currentLives = Math.min(4, currentLives + 1);
+
+  lifeManager();
+
+   if (currentLives <= 0) {
+    gameOver();
+  }
+}
+
 export function resetLives() {
   currentLives = 4;
   lifeManager();

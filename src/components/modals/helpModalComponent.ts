@@ -56,7 +56,7 @@ export function renderHelpModal() {
                 <img src="/src/assets/images/html.png" class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold">HTML</span>
-                  <p class="text-sm text-white/60">+1 ponto</p>
+                  <p class="text-sm text-white/60">+1 ponto. Se você estiver com menos de 4 vidas, pode recuperar 1 vida.</p>
                 </div>
               </div>
 
@@ -64,7 +64,7 @@ export function renderHelpModal() {
                 <img src="/src/assets/images/javascript.png" class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold">JavaScript</span>
-                  <p class="text-sm text-white/60">imunidade por 3s e +1 ponto</p>
+                  <p class="text-sm text-white/60">Garante imunidade por 3 segundos e +1 ponto.</p>
                 </div>
               </div>
 
@@ -72,7 +72,7 @@ export function renderHelpModal() {
                 <img src="/src/assets/images/tailwind.png" class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold text-white">Tailwind CSS</span>
-                  <p class="text-sm text-white/60">+1 ponto</p>
+                  <p class="text-sm text-white/60">+1 ponto.</p>
                 </div>
               </div>
 
@@ -88,7 +88,7 @@ export function renderHelpModal() {
                 <img src="/src/assets/images/bug.png" class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold">Bug</span>
-                  <p class="text-sm text-white/60">Perde 1 vida</p>
+                  <p class="text-sm text-white/60">Perde 1 vida.</p>
                 </div>
               </div>
 
@@ -96,7 +96,7 @@ export function renderHelpModal() {
                 <img src="/src/assets/images/crashError.png" class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold text-white">Erro 500</span>
-                  <p class="text-sm text-white/60">Reduz velocidade e perde 2 vidas</p>
+                  <p class="text-sm text-white/60">Reduz sua velocidade por 5 segundos e faz você perder 1 vida.</p>
                 </div>
               </div>
 
