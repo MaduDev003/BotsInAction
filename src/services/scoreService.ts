@@ -14,19 +14,12 @@ export function updateScore(type: string) {
   let value = 0;
 
   if (type === "bug") {
-    value = -1;
-
     loseLife(1);
-
   } else if (type === "crashError") {
-    value = -1;
-
     loseLife(1);
-
-  } else if(type === "html"){
+  } else if (type === "html") {
     gainLife();
     value = 1;
-
   } else {
     value = 1;
   }
@@ -34,4 +27,27 @@ export function updateScore(type: string) {
   score = Math.max(0, score + value);
 
   scoreElement.textContent = `Pontos: ${score}`;
+}
+
+export function getScoreComparision() {
+  let minScore = Number(localStorage.getItem("minScore")) || Infinity;
+  let maxScore = Number(localStorage.getItem("maxScore")) || 0;
+
+  let currentScore = score;
+
+  if (currentScore < minScore) {
+    localStorage.setItem("minScore", String(currentScore));
+    minScore = currentScore;
+  }
+
+  if (currentScore > maxScore) {
+    localStorage.setItem("maxScore", String(currentScore));
+    maxScore = currentScore;
+  }
+
+  return {
+    currentScore,
+    minScore,
+    maxScore,
+  };
 }

@@ -22,7 +22,7 @@ function getRandomType(): ItemType {
 
   if (isSmallScreen) {
     if (rand < 0.35) return "bug";
-    if (rand < 0.55) return "javascript";
+    if (rand < 0.45) return "javascript";
     if (rand < 0.75) return "tailwind";
     return "html";
   }

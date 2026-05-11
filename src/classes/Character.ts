@@ -51,7 +51,7 @@ export default class Character {
     this.locked = false;
   }
 
-  activateProtection(duration = 10000) {
+  activateProtection(duration = 5000) {
     this.isProtected = true;
 
     clearTimeout(this.protectionTimeout);

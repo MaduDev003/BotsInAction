@@ -2,6 +2,7 @@ import { resetLives } from "./lifeService";
 import { renderGameScreen } from "../screens/gameScreen";
 import { pauseMusic, playMusic } from "./audioService";
 import { characterMovement, getCharacterInstance } from "./characterService";
+import { getScoreComparision } from "./scoreService";
 
 let isGamePaused = false;
 
@@ -32,22 +33,59 @@ export function restartGame() {
 }
 
 export function gameOver() {
-
   const app = document.querySelector("#app") as HTMLElement;
+
+  const { currentScore, minScore, maxScore } = getScoreComparision();
 
   app.innerHTML = `
   
     <div class="w-full min-h-screen bg-black/70 backdrop-blur-sm flex items-center justify-center px-4">
 
-      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 sm:p-10 w-full max-w-lg text-white flex flex-col items-center gap-8 shadow-2xl">
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 sm:p-10 w-full max-w-lg text-white flex flex-col items-center gap-6 shadow-2xl">
 
         <h1 class="text-5xl sm:text-6xl font-bold text-red-700 animate-pulse">
           Game Over
         </h1>
 
-        <p class="text-zinc-400 text-center text-base sm:text-lg">
-          Os bugs dominaram o sistema
+         <p class="text-zinc-400 text-center text-base sm:text-lg">
+          Os bugs dominaram o sistema.
         </p>
+
+        <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+          <div class="bg-zinc-800 rounded-xl p-4 flex flex-col items-center">
+            <span class="text-sm text-zinc-400">
+              Melhor Score
+            </span>
+
+            <p class="text-3xl font-bold text-green-600">
+              ${maxScore}
+            </p>
+          </div>
+
+          <div class="bg-zinc-800 rounded-xl p-4 flex flex-col items-center">
+            <span class="text-sm text-zinc-400">
+              Menor Score
+            </span>
+
+            <p class="text-3xl font-bold text-red-700">
+              ${minScore}
+            </p>
+          </div>
+
+          <div class="bg-zinc-800 rounded-xl p-4 flex flex-col items-center">
+            <span class="text-sm text-zinc-400">
+              Score Atual
+            </span>
+
+            <p class="text-3xl font-bold text-white">
+              ${currentScore}
+            </p>
+          </div>
+
+        </div>
+
+       
 
         <div class="flex flex-col sm:flex-row gap-4 w-full">
 
@@ -86,7 +124,6 @@ export function gameOver() {
 
   if (restartBtn) {
     restartBtn.addEventListener("click", () => {
-
       resetLives();
 
       renderGameScreen();
