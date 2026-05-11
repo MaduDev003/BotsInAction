@@ -2,7 +2,7 @@ import { resetLives } from "./lifeService";
 import { renderGameScreen } from "../screens/gameScreen";
 import { pauseMusic, playMusic } from "./audioService";
 import { characterMovement, getCharacterInstance } from "./characterService";
-import { getScoreComparision } from "./scoreService";
+import { getScoreStats } from "./scoreService";
 
 let isGamePaused = false;
 
@@ -35,7 +35,7 @@ export function restartGame() {
 export function gameOver() {
   const app = document.querySelector("#app") as HTMLElement;
 
-  const { currentScore, minScore, maxScore } = getScoreComparision();
+  const { currentScore, minScore, maxScore } = getScoreStats();
 
   app.innerHTML = `
   

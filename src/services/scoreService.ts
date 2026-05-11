@@ -29,7 +29,7 @@ export function updateScore(type: string) {
   scoreElement.textContent = `Pontos: ${score}`;
 }
 
-export function getScoreComparision() {
+export function getScoreStats() {
   let minScore = Number(localStorage.getItem("minScore")) || Infinity;
   let maxScore = Number(localStorage.getItem("maxScore")) || 0;
 
