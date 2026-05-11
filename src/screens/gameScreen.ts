@@ -9,16 +9,13 @@ import {
   renderCharacter,
   characterMovement,
   createCharacter,
-  checkCharacterCollisions,
-  getCharacterInstance,
+  handleCollision
 } from "../services/characterService";
 
-import { pauseMusic, playMusic } from "../services/audioService";
+import { togglePauseGame } from "../services/gameService";
 import { lifeManager } from "../services/lifeService";
 import startItemSpawner from "../services/gameObjectsService";
-import { updateScore } from "../services/scoreService";
 
-let isGamePaused = false;
 let controlsInitialized = false;
 
 export function renderGameScreen() {
@@ -70,10 +67,10 @@ export function renderGameScreen() {
   lifeManager();
   setupControls();
 
-  characterMovement(() => isGamePaused);
-  startItemSpawner(() => isGamePaused);
+  characterMovement();
+  startItemSpawner();
 
-  setInterval(checkCollisions, 100);
+  setInterval(handleCollision, 100);
 }
 
 function setupControls() {
@@ -81,55 +78,13 @@ function setupControls() {
 
   document.addEventListener("keydown", (event) => {
     if (event.code === "Space") {
+
       event.preventDefault();
-      togglePause();
+
+      togglePauseGame();
     }
   });
 
   controlsInitialized = true;
 }
 
-function checkCollisions() {
-  const collision = checkCharacterCollisions();
-
-  if (!collision) return;
-
-  const typeOfItem = collision.dataset.type;
-  const character = getCharacterInstance();
-
-  const isDanger =
-    typeOfItem === "bug" || typeOfItem === "crashError";
-
-  if (typeOfItem === "javascript") {
-    character.activateProtection();
-  }
-
-  if (isDanger) {
-    character.element.classList.add("animate-blink");
-
-    setTimeout(() => {
-      character.element.classList.remove("animate-blink");
-    }, 300);
-  }
-
-  if (isDanger && character.getProtectionState()) {
-    collision.remove();
-    return;
-  }
-
-  updateScore(typeOfItem || "");
-  collision.remove();
-}
-
-
-function togglePause() {
-  isGamePaused = !isGamePaused;
-
-  isGamePaused ? pauseMusic() : playMusic();
-
-  document.querySelectorAll(".animate-fall").forEach((item) => {
-    (item as HTMLElement).style.animationPlayState = isGamePaused
-      ? "paused"
-      : "running";
-  });
-}

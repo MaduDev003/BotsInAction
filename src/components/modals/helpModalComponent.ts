@@ -45,6 +45,19 @@ export function renderHelpModal() {
             </div>
           </div>
 
+       <div class="flex flex-col gap-3">
+          <p class="font-medium text-white/90">Como Pausar:</p>
+
+          <p class="text-sm text-white/70">
+            Em dispositivos móveis, basta abrir o menu de configurações ou o de ajuda que o jogo será pausado automaticamente. 
+            Para continuar, é só fechar o menu.
+          </p>
+
+          <p class="text-sm text-white/70">
+            Em computadores, você pode pausar pressionando a tecla Espaço ou abrindo o menu.
+          </p>
+        </div>
+
           <div class="flex flex-col gap-3">
             <p class="font-medium text-white/90">Sobre os ícones:</p>
 

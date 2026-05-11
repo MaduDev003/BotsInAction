@@ -1,6 +1,15 @@
-import type { ModalType } from '../types/modalTypes'
-import { renderSettingsModal } from './modals/settingsModalComponent'
-import { renderHelpModal } from './modals/helpModalComponent'
+import type { ModalType } from "../types/modalTypes";
+
+import {
+  togglePauseGame,
+  resumeGame
+} from "../services/gameService";
+
+import { renderSettingsModal }
+  from "./modals/settingsModalComponent";
+
+import { renderHelpModal }
+  from "./modals/helpModalComponent";
 
 export function renderTopMenu() {
   return `
@@ -39,20 +48,40 @@ export function renderTopMenu() {
       </button>
 
     </div>
-  `
+  `;
 }
+
 export function setupTopMenuEvents() {
   document
-    .querySelector('#settingsBtn')
-    ?.addEventListener('click', () => openModalByType('settings'))
+    .querySelector("#settingsBtn")
+    ?.addEventListener("click", () => {
+      togglePauseGame();
+
+      openModalByType("settings");
+    });
 
   document
-    .querySelector('#helpBtn')
-    ?.addEventListener('click', () => openModalByType('help'))
+    .querySelector("#helpBtn")
+    ?.addEventListener("click", () => {
+      togglePauseGame();
+
+      openModalByType("help");
+    });
 }
 
 function openModalByType(type: ModalType) {
-  if (type === 'help') renderHelpModal()
-  if (type === 'settings') renderSettingsModal()
-}
+  if (type === "help") {
+    renderHelpModal();
+  }
 
+  if (type === "settings") {
+    renderSettingsModal();
+  }
+
+  const closeBtn =
+    document.querySelector("#closeModal");
+
+  closeBtn?.addEventListener("click", () => {
+    resumeGame();
+  });
+}

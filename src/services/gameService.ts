@@ -1,13 +1,15 @@
 import { resetLives } from "./lifeService";
 import { renderGameScreen } from "../screens/gameScreen";
 import { pauseMusic, playMusic } from "./audioService";
-import { characterMovement, getCharacterInstance } from "./characterService";
+import {
+  characterMovement,
+  getCharacterInstance,
+} from "./characterService";
 import { getScoreStats } from "./scoreService";
 
-let isGamePaused = false;
+export let isGamePaused = false;
 
 export function restartGame() {
-
   const scoreElement = document.querySelector(
     "#score span"
   ) as HTMLElement;
@@ -29,13 +31,15 @@ export function restartGame() {
   }
 
   resetLives();
+
   characterMovement(() => isGamePaused);
 }
 
 export function gameOver() {
   const app = document.querySelector("#app") as HTMLElement;
 
-  const { currentScore, minScore, maxScore } = getScoreStats();
+  const { currentScore, minScore, maxScore } =
+    getScoreStats();
 
   app.innerHTML = `
   
@@ -47,7 +51,7 @@ export function gameOver() {
           Game Over
         </h1>
 
-         <p class="text-zinc-400 text-center text-base sm:text-lg">
+        <p class="text-zinc-400 text-center text-base sm:text-lg">
           Os bugs dominaram o sistema.
         </p>
 
@@ -84,8 +88,6 @@ export function gameOver() {
           </div>
 
         </div>
-
-       
 
         <div class="flex flex-col sm:flex-row gap-4 w-full">
 
@@ -133,6 +135,7 @@ export function gameOver() {
 
 export function pauseGame() {
   isGamePaused = true;
+
   getCharacterInstance().stopMovement();
 
   pauseMusic();
@@ -140,14 +143,12 @@ export function pauseGame() {
   document
     .querySelectorAll(".animate-fall")
     .forEach((item) => {
-
       (item as HTMLElement)
         .style.animationPlayState = "paused";
     });
 }
 
 export function resumeGame() {
-
   isGamePaused = false;
 
   playMusic();
@@ -155,7 +156,6 @@ export function resumeGame() {
   document
     .querySelectorAll(".animate-fall")
     .forEach((item) => {
-
       (item as HTMLElement)
         .style.animationPlayState = "running";
     });

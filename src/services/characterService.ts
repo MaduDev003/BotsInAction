@@ -1,5 +1,6 @@
 import Character from "../classes/Character";
-
+import { updateScore } from "./scoreService";
+import { isGamePaused } from "./gameService";
 let movementInitialized = false;
 
 let characterInstance: Character;
@@ -23,12 +24,12 @@ export function renderCharacter(): string {
   );
 }
 
-export function characterMovement(getIsGamePaused: () => boolean) {
+export function characterMovement() {
   if (movementInitialized) return;
 
   document.addEventListener("keydown", (e) => {
 
-    if (getIsGamePaused()) return;
+    if (isGamePaused) return;
 
     if (e.code === "ArrowLeft") {
       characterInstance.move("left");
@@ -42,7 +43,7 @@ export function characterMovement(getIsGamePaused: () => boolean) {
   movementInitialized = true;
 }
 
-export function checkCharacterCollisions() {
+export function getCharacterCollision() {
   const items = document.querySelectorAll(".animate-fall");
 
   const character = getCharacterInstance()
@@ -65,4 +66,36 @@ export function checkCharacterCollisions() {
   }
 
   return null;
+}
+
+export function handleCollision() {
+  const collision = getCharacterCollision();
+
+  if (!collision) return;
+
+  const typeOfItem = collision.dataset.type;
+  const character = getCharacterInstance();
+
+  const isDanger =
+    typeOfItem === "bug" || typeOfItem === "crashError";
+
+  if (typeOfItem === "javascript") {
+    character.activateProtection();
+  }
+
+  if (isDanger) {
+    character.element.classList.add("animate-blink");
+
+    setTimeout(() => {
+      character.element.classList.remove("animate-blink");
+    }, 500);
+  }
+
+  if (isDanger && character.getProtectionState()) {
+    collision.remove();
+    return;
+  }
+
+  updateScore(typeOfItem || "");
+  collision.remove();
 }

@@ -1,15 +1,24 @@
 import type { ItemType } from "../types/itemTypes";
+
+import { isGamePaused }
+  from "../services/gameService";
+
 let spawnCount = 0;
 
-export default function startItemSpawner(
-  getIsGamePaused: () => boolean
-) {
-  setInterval(() => {
-    if (getIsGamePaused()) return;
+let spawnerInterval: number;
+
+export default function startItemSpawner() {
+
+  clearInterval(spawnerInterval);
+
+  spawnerInterval = window.setInterval(() => {
+
+    if (isGamePaused) return;
 
     const type = getRandomType();
 
     spawnItem(type);
+
   }, 800);
 }
 
