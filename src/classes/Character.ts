@@ -9,7 +9,7 @@ export default class Character {
   constructor(element: HTMLElement) {
     this.element = element;
     this.x = 0;
-    this.speed = 25;
+    this.speed = 30;
     this.locked = false;
     this.isProtected = false;
   }
