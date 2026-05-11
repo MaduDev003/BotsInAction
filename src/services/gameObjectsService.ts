@@ -19,7 +19,7 @@ export default function startItemSpawner() {
 
     spawnItem(type);
 
-  }, 800);
+  }, 700);
 }
 
 function getRandomType(): ItemType {
