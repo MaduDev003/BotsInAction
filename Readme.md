@@ -138,6 +138,8 @@ npm run dev
 ```
 
 ## ©️ Créditos
+
+### Assets visuais
 Os assets visuais principais do jogo (personagens, interface e ícones de gameplay como HTML, JavaScript, Tailwind, bugs, erros, corações e robôs) foram criados por mim exclusivamente para este projeto.
 
 ### Ícones
