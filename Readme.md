@@ -146,7 +146,7 @@ npm run dev
 </p>
 
 <p align="center">
-  <img src="./public/gameover.png" alt="Tela de Game Over e Score" style="max-width: 600px; width: 100%;" />
+  <img src="./public/gameOver.png" alt="Tela de Game Over e Score" style="max-width: 600px; width: 100%;" />
 </p>
 
 
