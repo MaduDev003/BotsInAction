@@ -138,11 +138,12 @@ npm run dev
 ```
 
 ## ©️ Créditos
-
-Os assets visuais principais do jogo (personagens e interface e ícones que ) foram criados por mim exclusivamente para este projeto.
+Os assets visuais principais do jogo (personagens, interface e ícones de gameplay como HTML, JavaScript, Tailwind, bugs, erros, corações e robôs) foram criados por mim exclusivamente para este projeto.
 
 ### Icons
- ícones de interface (como help, settings e bot) foram obtidos de bibliotecas gratuitas de uso livre.
+Ícones de interface (help, settings e bot) foram obtidos gratuitamente através de bibliotecas de ícones.
+
+Fontes: Flaticon e Icons8
 
 ### Música
 A trilha sonora utilizada no jogo foi obtida gratuitamente através do Pixabay.
