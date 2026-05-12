@@ -1,9 +1,6 @@
 <div align="center">
   <img src="./src/assets/icons/boot.png" alt="BotsInAction" width="80" />
   <h1>BotsInAction</h1>
-</div>
-
-<div align="center">
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
