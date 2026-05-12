@@ -28,7 +28,7 @@
 
 O **BotsInAction** é um jogo de captura e esquiva onde o objetivo principal do jogador é sobreviver o maior tempo possível e alcançar a maior pontuação.
 
-Itens positivos relacionados à tecnologia, como HTML5, Tailwind CSS e JavaScript, aparecem aleatoriamente na tela e aumentam o score do jogador. Já elementos negativos, como Bug e Error 500, reduzem a quantidade de vidas ao serem coletados.
+Itens positivos relacionados à tecnologia, como HTML5, Tailwind CSS e JavaScript, aparecem aleatoriamente na tela e aumentam o pontuação do jogador. Já elementos negativos, como Bug e Error 500, reduzem a quantidade de vidas ao serem coletados.
 
 O jogo também possui mecânicas extras:
 - O item HTML5 pode restaurar uma vida (até o limite de 4)
@@ -146,7 +146,7 @@ npm run dev
 </div>
 
 <div align="center">
-  <img src="./public/gameOver.png" alt="Tela de Game Over e Score" width="600" />
+  <img src="./public/gameOver.png" alt="Tela de Game Over e pontuação" width="600" />
 </div>
 
 
