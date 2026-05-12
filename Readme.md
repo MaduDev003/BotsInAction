@@ -20,7 +20,9 @@
 - [🚧 Desafios enfrentados](#-desafios-enfrentados)
 - [🚀 Possíveis melhorias](#-possíveis-melhorias)
 - [📦 Como executar o projeto](#-como-executar-o-projeto)
+- [🎮 Gameplay](#-gameplay)
 - [©️ Créditos](#️-créditos)
+
 
 ## 🕹️ O que é o BotsInAction
 
@@ -136,6 +138,17 @@ npm install
 # Execute o projeto
 npm run dev
 ```
+
+## 🎮 Gameplay
+
+<p align="center">
+  <img src="./public/gameplay.gif" alt="Gameplay BotsInAction" />
+</p>
+
+<p align="center">
+  <img src="./public/gameover.png" alt="Tela de Game Over e Score" style="max-width: 600px; width: 100%;" />
+</p>
+
 
 ## ©️ Créditos
 
