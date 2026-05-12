@@ -1,12 +1,13 @@
-<div style="text-align: center;">
+<div align="center">
   <img src="./src/assets/icons/boot.png" alt="BotsInAction" width="80" />
-  <p style="font-size: 30px">BotsInAction</p>
+  <h1>BotsInAction</h1>
 </div>
-<div style="text-align: center; margin-bottom: 10px;">
-    <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
-    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+
+<div align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
- <img src="https://img.shields.io/badge/TailwindCSS-0EA5E9?style=flat-square&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/TailwindCSS-0EA5E9?style=flat-square&logo=tailwindcss&logoColor=white" />
 </div>
 
 ## Sessões
