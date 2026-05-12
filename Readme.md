@@ -156,7 +156,7 @@ npm run dev
 Os assets visuais principais do jogo (personagens, interface e ícones de gameplay como HTML, JavaScript, Tailwind, bugs, erros, corações e robôs) foram criados por mim exclusivamente para este projeto.
 
 ### Ícones
-Ícones de interface (help, settings e bot) localizados na pasta `/icons` foram obtidos gratuitamente através de bibliotecas de ícones.
+Ícones de interface (help, settings) localizados na pasta `/icons` e o favicon  localizado na pasta `/public` foram obtidos gratuitamente através de bibliotecas de ícones.
 
 Fontes: Flaticon e Icons8
 
