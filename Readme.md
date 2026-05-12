@@ -141,13 +141,13 @@ npm run dev
 
 ## 🎮 Gameplay
 
-<p align="center">
+<div align="center">
   <img src="./public/gameplay.gif" alt="Gameplay BotsInAction" />
-</p>
+</div>
 
-<p align="center">
-  <img src="./public/gameOver.png" alt="Tela de Game Over e Score" style="max-width: 600px; width: 100%;" />
-</p>
+<div align="center">
+  <img src="./public/gameOver.png" alt="Tela de Game Over e Score" width="600" />
+</div>
 
 
 ## ©️ Créditos
