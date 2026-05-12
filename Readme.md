@@ -117,7 +117,7 @@ O desenvolvimento do projeto também contribuiu para o aprofundamento em:
 - Criação de uma classe específica para gerenciamento dos itens coletáveis
 - Ajustes mais precisos na área de colisão dos itens
 - Adição de novos itens e mecânicas de gameplay
-- Expansão do sistema de áudio (adicionar um audio quando o personagem colidir com os ícones ruins)
+- Expansão do sistema de áudio (adicionar um áudio quando o personagem colidir com os ícones ruins)
 
 Algumas melhorias foram propositalmente adiadas para priorizar aprendizado técnico e evolução da arquitetura dentro do tempo disponível de desenvolvimento.
 
