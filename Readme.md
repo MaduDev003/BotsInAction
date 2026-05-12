@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./src/assets/icons/boot.png" alt="BotsInAction" width="80" />
+  <img src="./src/assets/icons/bot.png" alt="BotsInAction" width="80" />
 
   <p>
     <strong>BotsInAction</strong>
@@ -139,10 +139,13 @@ npm run dev
 
 ## ©️ Créditos
 
-Todos os elementos visuais do jogo, incluindo personagens, ícones e interface, foram desenvolvidos por mim para este projeto.
+Os assets visuais principais do jogo (personagens e interface e ícones que ) foram criados por mim exclusivamente para este projeto.
 
-### 🎵 Música
+### Icons
+ ícones de interface (como help, settings e bot) foram obtidos de bibliotecas gratuitas de uso livre.
+
+### Música
 A trilha sonora utilizada no jogo foi obtida gratuitamente através do Pixabay.
 
 Créditos: 5XBeatz (Aliabbas Abasov)  
-Fonte: [Perfil no Pixabay](https://pixabay.com/pt/users/5xbeatz-39481357/?utm_source=chatgpt.com)
+Fonte: https://pixabay.com/pt/users/5xbeatz-39481357/

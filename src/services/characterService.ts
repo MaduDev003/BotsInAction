@@ -20,7 +20,7 @@ export function getCharacterInstance() {
 export function renderCharacter(): string {
   return (
     localStorage.getItem("selectedCharacter") ||
-    "boot2"
+    "bot2"
   );
 }
 

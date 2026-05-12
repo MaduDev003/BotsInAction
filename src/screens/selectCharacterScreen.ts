@@ -19,24 +19,24 @@ export function renderSelectCharacterScreen() {
 
       <div id="containerPersonagens" class="flex gap-10 w-[80%] justify-center flex-wrap">
         
-        <button id="boot1" class="group">
+        <button id="bot1" class="group">
           <div class="bg-zinc-800/70 rounded-xl border-2 border-transparent p-4 
                       transition-all duration-300 
                       group-hover:border-blue-500 group-hover:scale-105">
             <img 
-              src="/src/assets/images/characters/boot1.png"  
+              src="/src/assets/images/characters/bot1.png"  
               alt="Robo 1" 
             class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain mx-auto"
             >
           </div>
         </button>
 
-        <button id="boot2" class="group">
+        <button id="bot2" class="group">
           <div class="bg-zinc-800/70 rounded-xl border-2 border-transparent p-4 
                       transition-all duration-300 
                       group-hover:border-blue-500 group-hover:scale-105">
             <img 
-              src="/src/assets/images/characters/boot2.png"  
+              src="/src/assets/images/characters/bot2.png"  
               alt="Robo 2" 
               class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain mx-auto"
             >
