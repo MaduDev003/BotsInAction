@@ -32,7 +32,7 @@ export function restartGame() {
 
   resetLives();
 
-  characterMovement(() => isGamePaused);
+  characterMovement();
 }
 
 export function gameOver() {
@@ -152,7 +152,7 @@ export function resumeGame() {
   isGamePaused = false;
 
   playMusic();
-
+   getCharacterInstance().resumeMovement();
   document
     .querySelectorAll(".animate-fall")
     .forEach((item) => {

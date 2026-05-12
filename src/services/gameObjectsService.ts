@@ -8,11 +8,9 @@ let spawnCount = 0;
 let spawnerInterval: number;
 
 export default function startItemSpawner() {
-
   clearInterval(spawnerInterval);
 
   spawnerInterval = window.setInterval(() => {
-
     if (isGamePaused) return;
 
     const type = getRandomType();
