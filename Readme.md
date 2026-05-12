@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./src/assets/icons/bot.png" alt="BotsInAction" width="80" />
+  <img src="./public/favicon.png" alt="BotsInAction" width="80" />
 
   <p>
     <strong>BotsInAction</strong>
