@@ -2,7 +2,7 @@
   <img src="./src/assets/icons/boot.png" alt="BotsInAction" width="80" />
 
   <p>
-    <font size="6"><strong>BotsInAction</strong></font>
+    <strong>BotsInAction</strong>
   </p>
 
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
