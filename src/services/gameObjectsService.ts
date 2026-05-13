@@ -1,7 +1,11 @@
 import type { ItemType } from "../types/itemTypes";
+import { isGamePaused } from "../services/gameService";
+import bug from '..assets/images/bug.png';
+import crashError from '..assets/images/crashError.png';
+import javaScript from '..assets/images/javaScript.png';
+import tailwind from '..assets/images/tailwind.png';
+import html from '..assets/images/html.png';
 
-import { isGamePaused }
-  from "../services/gameService";
 
 let spawnCount = 0;
 
@@ -29,14 +33,14 @@ function getRandomType(): ItemType {
 
   if (isSmallScreen) {
     if (rand < 0.35) return "bug";
-    if (rand < 0.45) return "javascript";
+    if (rand < 0.45) return "javaScript";
     if (rand < 0.75) return "tailwind";
     return "html";
   }
 
   if(rand < 0.25) return "crashError";
   if (rand < 0.4) return "bug";
-  if (rand < 0.2) return "javascript";
+  if (rand < 0.2) return "javaScript";
   if (rand < 0.9) return "tailwind";
 
   return "html";
@@ -57,11 +61,11 @@ function spawnItem(type: ItemType) {
   item.dataset.type = type;
 
   const images = {
-    bug: "/src/assets/images/bug.png",
-    crashError: "/src/assets/images/crashError.png",
-    javascript: "/src/assets/images/javaScript.png",
-    tailwind: "/src/assets/images/tailwind.png",
-    html: "/src/assets/images/html.png",
+    bug,
+    crashError,
+    javaScript,
+    tailwind,
+    html,
   };
 
   item.innerHTML = `

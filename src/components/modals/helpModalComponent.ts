@@ -1,3 +1,9 @@
+import bug from '..assets/images/bug.png';
+import crashError from '..assets/images/crashError.png';
+import javaScript from '..assets/images/javaScript.png';
+import tailwind from '..assets/images/tailwind.png';
+import html from '..assets/images/html.png';
+
 export function renderHelpModal() {
   const modal = document.createElement("div");
 
@@ -66,7 +72,7 @@ export function renderHelpModal() {
             <div class="flex flex-col gap-3">
 
               <div class="bg-zinc-800/70 p-3 rounded-xl flex items-center gap-4 hover:bg-zinc-800 transition">
-                <img src="/src/assets/images/html.png" class="w-16 h-16 object-contain">
+                <img src=${html} class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold">HTML</span>
                   <p class="text-sm text-white/60">+1 ponto. Se você estiver com menos de 4 vidas, pode recuperar 1 vida.</p>
@@ -74,7 +80,7 @@ export function renderHelpModal() {
               </div>
 
               <div class="bg-zinc-800/70 p-3 rounded-xl flex items-center gap-4 hover:bg-zinc-800 transition">
-                <img src="/src/assets/images/javascript.png" class="w-16 h-16 object-contain">
+                <img src=${javaScript} class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold">JavaScript</span>
                   <p class="text-sm text-white/60">Garante imunidade por 3 segundos e +1 ponto.</p>
@@ -82,7 +88,7 @@ export function renderHelpModal() {
               </div>
 
               <div class="bg-zinc-800/70 p-3 rounded-xl flex items-center gap-4 hover:bg-zinc-800 transition">
-                <img src="/src/assets/images/tailwind.png" class="w-16 h-16 object-contain">
+                <img src=${tailwind} class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold text-white">Tailwind CSS</span>
                   <p class="text-sm text-white/60">+1 ponto.</p>
@@ -98,7 +104,7 @@ export function renderHelpModal() {
             <div class="flex flex-col gap-3">
 
               <div class="bg-red-500/5 border border-red-500/10 p-3 rounded-xl flex items-center gap-4 hover:bg-red-500/10 transition">
-                <img src="/src/assets/images/bug.png" class="w-16 h-16 object-contain">
+                <img src=${bug} class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold">Bug</span>
                   <p class="text-sm text-white/60">Perde 1 vida.</p>
@@ -106,7 +112,7 @@ export function renderHelpModal() {
               </div>
 
               <div class="bg-red-500/5 border border-red-500/10 p-3 rounded-xl flex items-center gap-4 hover:bg-red-500/10 transition">
-                <img src="/src/assets/images/crashError.png" class="w-16 h-16 object-contain">
+                <img src=${crashError} class="w-16 h-16 object-contain">
                 <div>
                   <span class="font-semibold text-white">Erro 500</span>
                   <p class="text-sm text-white/60">Reduz sua velocidade por 5 segundos e faz você perder 1 vida.</p>

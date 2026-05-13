@@ -1,1 +1,1 @@
-export type ItemType = 'bug' | 'crashError' | 'javascript' | 'tailwind' | 'html'
+export type ItemType = 'bug' | 'crashError' | 'javaScript' | 'tailwind' | 'html'

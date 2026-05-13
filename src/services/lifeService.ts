@@ -1,5 +1,7 @@
 
 import { gameOver } from "./gameService";
+import redHeart from '../assets/images/redHeart.png';
+import blackHeart from '..assets/images/blackHeart.png';
 let currentLives = 4;
 
 export function lifeManager() {
@@ -14,8 +16,8 @@ export function lifeManager() {
 
     img.src =
       i < currentLives
-        ? "/src/assets/images/redHeart.png"
-        : "/src/assets/images/blackHeart.png";
+        ? redHeart
+        : blackHeart;
 
     img.className = "w-6 h-6";
 
