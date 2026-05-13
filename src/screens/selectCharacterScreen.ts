@@ -2,6 +2,8 @@ import { setBackground } from '../utils/setBackground';
 import { renderGameScreen } from './gameScreen';
 import { renderTopMenu, setupTopMenuEvents } from '../components/topMenuComponent';
 import bg from '../assets/images/background.png';
+import bot1 from '../assets/images/characters/bot1.png';
+import bot2 from '../assets/images/characters/bot2.png';
 
 export function renderSelectCharacterScreen() {
   const app = document.querySelector('#app');
@@ -25,7 +27,7 @@ export function renderSelectCharacterScreen() {
                       transition-all duration-300 
                       group-hover:border-blue-500 group-hover:scale-105">
             <img 
-              src="/src/assets/images/characters/bot1.png"  
+              src=${bot1}
               alt="Robo 1" 
             class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain mx-auto"
             >
@@ -37,7 +39,7 @@ export function renderSelectCharacterScreen() {
                       transition-all duration-300 
                       group-hover:border-blue-500 group-hover:scale-105">
             <img 
-              src="/src/assets/images/characters/bot2.png"  
+              src=${bot2} 
               alt="Robo 2" 
               class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain mx-auto"
             >

@@ -1,4 +1,6 @@
 import type { ModalType } from "../types/modalTypes";
+import settingsIcon from "../assets/icons/settings.svg";
+import helpIcon from "../assets/icons/help.svg";
 
 import {
   togglePauseGame,
@@ -23,7 +25,7 @@ export function renderTopMenu() {
                text-white/80 hover:text-white hover:bg-white/10 
                transition group">
         
-        <img src="/src/assets/icons/settings.svg" 
+        <img src=${settingsIcon}
              class="w-6 h-6 transition group-hover:rotate-90">
 
         <span class="hidden sm:inline">
@@ -39,7 +41,7 @@ export function renderTopMenu() {
                text-white/80 hover:text-white hover:bg-white/10 
                transition group">
         
-        <img src="/src/assets/icons/help.svg" 
+        <img src=${helpIcon}
              class="w-6 h-6 transition group-hover:scale-110">
 
         <span class="hidden sm:inline">
