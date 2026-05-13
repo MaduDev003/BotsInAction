@@ -7,7 +7,7 @@ export function renderStartScreen() {
   const app = document.querySelector('#app')
   if (!app) return
 
-  setBackground('../assets/images/background.png')
+  setBackground('./assets/images/background.png')
 
   app.innerHTML = `
     ${renderTopMenu()}
