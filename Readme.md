@@ -10,7 +10,9 @@
   <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
   <img src="https://img.shields.io/badge/TailwindCSS-0EA5E9?style=flat-square&logo=tailwindcss&logoColor=white" />
 
-  **🔗 [Acesse a aplicação online](https://bots-in-action.vercel.app/)**
+  <a href="https://bots-in-action.vercel.app/" target="_blank">
+  🔗 Acesse a aplicação online
+</a>
 </div>
 
 
