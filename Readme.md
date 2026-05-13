@@ -96,7 +96,7 @@ O projeto também utiliza:
 
 ## ⚙️ Decisões técnicas
 
-O projeto foi desenvolvido utilizando React, Vite e TypeScript com o objetivo de praticar conceitos de arquitetura front-end, tipagem e organização de aplicações em tempo real.
+O projeto foi desenvolvido utilizando React, Vite, TypeScript e Tailwind CSS com o objetivo de praticar conceitos de arquitetura front-end, tipagem e organização de aplicações em tempo real.
 
 A separação entre lógica e interface foi adotada para facilitar manutenção, leitura e escalabilidade do código, evitando concentrar regras de negócio diretamente nos componentes visuais.
 
