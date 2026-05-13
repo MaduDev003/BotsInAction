@@ -54,21 +54,35 @@ export function renderTopMenu() {
 }
 
 export function setupTopMenuEvents() {
+
   document
     .querySelector("#settingsBtn")
     ?.addEventListener("click", () => {
-      togglePauseGame();
+
+      const character = document.querySelector("#character");
+
+      if (character) {
+        togglePauseGame();
+      }
 
       openModalByType("settings");
+
     });
 
   document
     .querySelector("#helpBtn")
     ?.addEventListener("click", () => {
-      togglePauseGame();
+
+      const character = document.querySelector("#character");
+
+      if (character) {
+        togglePauseGame();
+      }
 
       openModalByType("help");
+
     });
+
 }
 
 function openModalByType(type: ModalType) {
