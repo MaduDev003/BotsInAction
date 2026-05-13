@@ -12,8 +12,14 @@
 </div>
 <div align="center">
   <a href="https://bots-in-action.vercel.app/">
-  🔗 Acesse a aplicação online
-</a>
+    🔗 Acesse a aplicação online
+  </a>
+
+  <br>
+
+  <sub>
+    ⚠️ O link abrirá a aplicação online. Recomendo ler o README antes de acessar o deploy.
+  </sub>
 </div>
 
 
