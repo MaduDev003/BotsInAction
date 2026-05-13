@@ -2,12 +2,13 @@ import { setBackground } from '../utils/setBackground'
 import { renderSelectCharacterScreen } from './selectCharacterScreen'
 import { renderTopMenu, setupTopMenuEvents } from '../components/topMenuComponent'
 import { playMusic } from '../services/audioService'
+import bg from '../assets/images/background.png';
 
 export function renderStartScreen() {
   const app = document.querySelector('#app')
   if (!app) return
 
-  setBackground('./assets/images/background.png')
+  setBackground(bg)
 
   app.innerHTML = `
     ${renderTopMenu()}
