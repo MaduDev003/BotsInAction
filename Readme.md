@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/TailwindCSS-0EA5E9?style=flat-square&logo=tailwindcss&logoColor=white" />
 </div>
 <div align="center">
-  <a href="https://bots-in-action.vercel.app/" target="_blank">
+  <a href="https://bots-in-action.vercel.app/">
   🔗 Acesse a aplicação online
 </a>
 </div>
