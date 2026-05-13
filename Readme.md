@@ -40,7 +40,7 @@
 
 O **BotsInAction** é um jogo de captura e esquiva onde o objetivo principal do jogador é sobreviver o maior tempo possível e alcançar a maior pontuação.
 
-Itens positivos relacionados à tecnologia, como HTML5, Tailwind CSS e JavaScript, aparecem aleatoriamente na tela e aumentam o pontuação do jogador. Já elementos negativos, como Bug e Error 500, reduzem a quantidade de vidas ao serem coletados.
+Itens positivos relacionados à tecnologia, como HTML5, Tailwind CSS e JavaScript, aparecem aleatoriamente na tela e aumentam a pontuação do jogador. Já elementos negativos, como Bug e Error 500, reduzem a quantidade de vidas ao serem coletados.
 
 O jogo também possui mecânicas extras:
 - O item HTML5 pode restaurar uma vida (até o limite de 4)
@@ -83,7 +83,7 @@ A lógica da aplicação foi isolada da interface visual através da pasta `serv
 - Sistema de vidas
 - Sistema de pontuação
 - Spawn de itens
-- Controle de audio 
+- Controle de áudio 
 - Controle do estado e fluxo da partida
 
 Os componentes reutilizáveis foram centralizados na pasta `components`, incluindo elementos compartilhados entre diferentes telas, como modais de ajuda e configurações.
@@ -139,7 +139,7 @@ Algumas melhorias foram propositalmente adiadas para priorizar aprendizado técn
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/botsinaction
+git clone https://github.com/MaduDev003/BotsInAction.git
 
 # Entre na pasta
 cd botsinaction
@@ -166,6 +166,10 @@ npm run dev
 
 ### Assets visuais
 Os assets visuais principais do jogo (personagens, interface e ícones de gameplay como HTML, JavaScript, Tailwind, bugs, erros, corações e robôs) foram criados por mim exclusivamente para este projeto.
+
+### Personagens
+- **Zathura** → referência ao filme *Zathura*
+- **Dev2D2** → inspirado em R2-D2
 
 ### Ícones
 Ícones de interface (help, settings) localizados na pasta `/icons` e o favicon  localizado na pasta `/public` foram obtidos gratuitamente através de bibliotecas de ícones.
