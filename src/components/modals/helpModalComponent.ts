@@ -1,8 +1,8 @@
-import bug from '..assets/images/bug.png';
-import crashError from '..assets/images/crashError.png';
-import javaScript from '..assets/images/javaScript.png';
-import tailwind from '..assets/images/tailwind.png';
-import html from '..assets/images/html.png';
+import bug from '../../assets/images/bug.png';
+import crashError from '../../assets/images/crashError.png';
+import javaScript from '../../assets/images/javaScript.png';
+import tailwind from '../../assets/images/tailwind.png';
+import html from '../../assets/images/html.png';
 
 export function renderHelpModal() {
   const modal = document.createElement("div");
