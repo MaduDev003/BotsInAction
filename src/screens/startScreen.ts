@@ -1,14 +1,14 @@
-import { setBackground } from '../utils/setBackground'
-import { renderSelectCharacterScreen } from './selectCharacterScreen'
-import { renderTopMenu, setupTopMenuEvents } from '../components/topMenuComponent'
-import { playMusic } from '../services/audioService'
+import { setBackground } from '../utils/setBackground';
+import { renderSelectCharacterScreen } from './selectCharacterScreen';
+import { renderTopMenu, setupTopMenuEvents } from '../components/topMenuComponent';
+import { playMusic } from '../services/audioService';
 import bg from '../assets/images/background.png';
 
 export function renderStartScreen() {
-  const app = document.querySelector('#app')
-  if (!app) return
+  const app = document.querySelector('#app');
+  if (!app) return;
 
-  setBackground(bg)
+  setBackground(bg);
 
   app.innerHTML = `
     ${renderTopMenu()}
@@ -30,14 +30,14 @@ export function renderStartScreen() {
       </button>
 
     </div>
-  `
+  `;
 
   document
     .querySelector('#startBtn')
     ?.addEventListener('click', () => {
       playMusic()
       renderSelectCharacterScreen()
-    })
+    });
 
-  setupTopMenuEvents()
+  setupTopMenuEvents();
 }

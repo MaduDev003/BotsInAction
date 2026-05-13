@@ -1,12 +1,13 @@
-import { setBackground } from '../utils/setBackground'
-import { renderGameScreen } from './gameScreen'
-import { renderTopMenu, setupTopMenuEvents } from '../components/topMenuComponent'
+import { setBackground } from '../utils/setBackground';
+import { renderGameScreen } from './gameScreen';
+import { renderTopMenu, setupTopMenuEvents } from '../components/topMenuComponent';
+import bg from '../assets/images/background.png';
 
 export function renderSelectCharacterScreen() {
-  const app = document.querySelector('#app')
-  if (!app) return
+  const app = document.querySelector('#app');
+  if (!app) return;
 
-  setBackground('/src/assets/images/background.png')
+  setBackground(bg);
 
   app.innerHTML = `
     <div class="w-screen h-screen flex flex-col items-center justify-center text-white bg-black/80 backdrop-blur-sm gap-6">
@@ -45,22 +46,22 @@ export function renderSelectCharacterScreen() {
 
       </div>
     </div>
-  `
+  `;
 
-  const container = document.querySelector('#containerPersonagens')
+  const container = document.querySelector('#containerPersonagens');
 
   container?.addEventListener('click', (event) => {
     const target = event.target as HTMLElement
 
-    const button = target.closest('button')
-    if (!button) return
+    const button = target.closest('button');
+    if (!button) return;
 
-    const id = button.id
+    const id = button.id;
 
-    localStorage.setItem('selectedCharacter', id)
+    localStorage.setItem('selectedCharacter', id);
 
-    renderGameScreen()
-  })
+    renderGameScreen();
+  });
 
-  setupTopMenuEvents()
+  setupTopMenuEvents();
 }

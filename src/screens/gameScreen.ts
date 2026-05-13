@@ -15,15 +15,20 @@ import {
 import { togglePauseGame } from "../services/gameService";
 import { lifeManager } from "../services/lifeService";
 import startItemSpawner from "../services/gameObjectsService";
+import bg from '../assets/images/background.png';
 
 let controlsInitialized = false;
 
 export function renderGameScreen() {
   const app = document.querySelector("#app");
+  const characterBot = new URL(
+  `../assets/images/characters/${renderCharacter()}.png`,
+  import.meta.url
+).href;
 
   if (!app) return;
 
-  setBackground("/src/assets/images/background.png");
+  setBackground(bg);
 
   app.innerHTML = `
     <div class="bg-neutral-900/20 backdrop-blur-sm w-screen h-20 relative">
@@ -55,7 +60,7 @@ export function renderGameScreen() {
     >
       <img
         id="character"
-        src="/src/assets/images/characters/${renderCharacter()}.png"
+        src=${characterBot}
         class="w-44 h-44 sm:w-52 sm:h-52 md:w-56 md:h-56 lg:w-60 lg:h-60 object-contain absolute bottom-2"
         alt="Personagem"
       />
