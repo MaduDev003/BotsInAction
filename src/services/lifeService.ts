@@ -1,7 +1,8 @@
 
 import { gameOver } from "./gameService";
-import redHeart from '../assets/images/redHeart.png';
 import blackHeart from '../assets/images/blackHeart.png';
+import redHeart from '../assets/images/redHeart.png';
+
 
 let currentLives = 4;
 
