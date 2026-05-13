@@ -110,7 +110,7 @@ Um dos principais desafios do projeto foi o sistema de movimentação do persona
 
 Foi necessário compreender a tela como um espaço baseado em eixos X e Y, garantindo que o personagem pudesse se mover horizontalmente sem ultrapassar os limites da viewport.
 
-Outro desafio importante foi o sistema de spawn de itens. Durante o desenvolvimento, percebeu-se que diferentes entidades não deveriam possuir a mesma taxa de aparição, levando à criação de uma lógica específica de probabilidade baseada no tipo de item.
+Outro desafio importante foi o sistema de spawn de itens. Durante o desenvolvimento, notei que diferentes entidades não deveriam possuir a mesma taxa de aparição, levando à criação de uma lógica específica de probabilidade baseada no tipo de item.
 
 O sistema de pausa também exigiu atenção especial, já que pausar o jogo envolvia interromper múltiplos estados simultaneamente:
 - Movimento do personagem
