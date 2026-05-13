@@ -2,6 +2,7 @@
 import { gameOver } from "./gameService";
 import redHeart from '../assets/images/redHeart.png';
 import blackHeart from '../assets/images/blackHeart.png';
+
 let currentLives = 4;
 
 export function lifeManager() {
