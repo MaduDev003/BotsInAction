@@ -1,6 +1,6 @@
 import type { ItemType } from "../types/itemTypes";
 import { isGamePaused } from "../services/gameService";
-import bug from '..assets/images/bug.png';
+import bug from '../assets/images/bug.png';
 import crashError from '..assets/images/crashError.png';
 import javaScript from '..assets/images/javaScript.png';
 import tailwind from '..assets/images/tailwind.png';
