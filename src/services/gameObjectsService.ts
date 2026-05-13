@@ -40,7 +40,7 @@ function getRandomType(): ItemType {
 
   if(rand < 0.25) return "crashError";
   if (rand < 0.4) return "bug";
-  if (rand < 0.2) return "javaScript";
+  if (rand < 0.4) return "javaScript";
   if (rand < 0.9) return "tailwind";
 
   return "html";
