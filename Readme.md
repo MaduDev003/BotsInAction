@@ -9,7 +9,8 @@
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
   <img src="https://img.shields.io/badge/TailwindCSS-0EA5E9?style=flat-square&logo=tailwindcss&logoColor=white" />
-
+</div>
+<div align="center">
   <a href="https://bots-in-action.vercel.app/" target="_blank">
   🔗 Acesse a aplicação online
 </a>
