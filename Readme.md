@@ -142,7 +142,7 @@ Algumas melhorias foram propositalmente adiadas para priorizar aprendizado técn
 git clone https://github.com/MaduDev003/BotsInAction.git
 
 # Entre na pasta
-cd botsinaction
+cd BotsInAction
 
 # Instale as dependências
 npm install
